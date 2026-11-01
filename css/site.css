@@ -8,7 +8,7 @@
 
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;font-family:Nunito,system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);font-size:1rem;line-height:1.5;-webkit-font-smoothing:antialiased}
+body{margin:0;overflow-x:clip;font-family:Nunito,system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);font-size:1rem;line-height:1.5;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 img,svg{max-width:100%}
 button{font-family:inherit;color:inherit}
@@ -290,3 +290,16 @@ footer{padding-bottom:calc(2rem + env(safe-area-inset-bottom,0px))}
 .form input,.form select,.form textarea{font-size:max(1rem,16px)}
 
 @media (max-width:960px){.band-head{justify-content:space-between}.band-head:before,.band-head:after{display:none}.pause{position:static;flex:none}.hero{padding-top:1.5rem}.hero .stage3d{height:17rem}}
+
+/* mobiel: strakkere subpagina's */
+@media (max-width:960px){
+  .page-hero{padding:1.25rem 0 .75rem}.crumbs{margin-bottom:.5rem}.page-hero .lead{margin-top:.5rem}.page-hero h1{font-size:2rem}
+  .page-hero p[style*="margin-top:1.5rem"]{margin-top:1rem!important}
+  section.tight{padding:1.25rem 0 0}section{padding:2rem 0}
+  .split{gap:1rem}.split .photo{order:-1;aspect-ratio:3/2}.split .prose h2{font-size:1.5rem;margin-bottom:.35rem}.split .prose p{font-size:.95rem}
+  .eyebrow{margin-bottom:.35rem}
+  .cta-band{padding:1.5rem;gap:1rem;border-radius:var(--r)}.cta-band h2{font-size:1.5rem}.cta-band p{font-size:.95rem}.cta-band .btn{white-space:normal;text-align:center;width:100%;line-height:1.3}
+  .cards{gap:.75rem}.card{padding:1.25rem}.card h3{margin:.6rem 0 .4rem}.card p{font-size:.95rem}
+  .card p[style*="flex-wrap"]{display:grid!important;grid-template-columns:1fr;gap:.5rem!important}.card p[style*="flex-wrap"] .btn{width:100%;white-space:normal;text-align:center}
+  .sec-head{margin-bottom:1rem}
+}
