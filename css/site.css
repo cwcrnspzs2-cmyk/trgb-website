@@ -62,7 +62,7 @@ p{margin:0}
 /* secties */
 section{padding:4.5rem 0}
 section.tight{padding-top:0}
-.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;margin-bottom:1.75rem;flex-wrap:wrap}
+.sec-head{display:flex;justify-content:space-between;align-items:center;gap:1.5rem;margin-bottom:1.75rem;flex-wrap:wrap}.sec-head>h2{margin:0}
 .sec-head p{max-width:34rem}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 .cards.two{grid-template-columns:repeat(2,1fr)}.cards.four{grid-template-columns:repeat(4,1fr)}
@@ -204,7 +204,8 @@ footer img{height:3.2rem;width:auto;margin-bottom:.75rem}
  .hero .grid,.cards,.cards.two,.cards.four,.prices,.steps,.steps.four,.split,.team,.info-grid,.page-hero .grid,footer .cols,.cta-band,.booking{grid-template-columns:1fr}
  .logos{grid-template-columns:repeat(3,1fr)}.logos.main{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}
  .ev{grid-template-columns:4rem 1fr;gap:.75rem}.ev .pill{display:none}.form .row{grid-template-columns:1fr}
- .stage3d,.hero .stage3d{height:22rem}.page-hero .mascots{display:none}section{padding:3rem 0}}
+ .stage3d{height:22rem}.hero .stage3d{height:19rem;margin:0}.hero .art{margin-top:0}.page-hero .mascots{display:none}section{padding:3rem 0}
+ .hero .actions{gap:.75rem 1rem;flex-wrap:nowrap}.hero .actions .btn{padding:.7rem 1.1rem;font-size:.95rem;flex:none}.hero .actions .link{font-size:.9rem;min-height:2.75rem;line-height:1.3}.hero .lead{margin-bottom:1.25rem}.hero .grid{gap:.75rem}}
 
 /* foto's */
 .photo{margin:0;border-radius:var(--r);overflow:hidden;aspect-ratio:4/3;background:var(--sand,#F3EBDD);box-shadow:var(--shadow);position:relative}
@@ -251,8 +252,8 @@ footer img{height:3.2rem;width:auto;margin-bottom:.75rem}
 .path-jeugd{grid-row:span 2;background:var(--lime-lt);border-color:transparent;min-height:24rem;padding-right:11rem}
 .path-jeugd h3{font-size:1.5rem;line-height:1.3}
 .path-jeugd .mascot{position:absolute;right:.5rem;bottom:0;height:12rem}
-.path-spelen{background-size:cover;background-position:center;border-color:transparent;color:#fff}
-.path-spelen:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,59,46,0) 20%,rgba(14,59,46,.88) 100%)}
+.path-spelen{background-size:cover;background-position:center;border-color:transparent;color:#fff;background-clip:padding-box;isolation:isolate;-webkit-mask-image:-webkit-radial-gradient(#fff,#000)}
+.path-spelen:before{content:"";position:absolute;inset:-1px;border-radius:inherit;background:linear-gradient(180deg,rgba(14,59,46,0) 20%,rgba(14,59,46,.88) 100%)}
 .path-spelen>div{position:relative}.path-spelen p{color:rgba(255,255,255,.9)}.path-spelen .more{color:var(--lime)}.path-spelen .tag{background:rgba(255,255,255,.92);color:var(--green)}
 /* tagline: woorden lichten op bij het scrollen */
 .tagline{padding:1.5rem 0 3rem}
@@ -274,7 +275,7 @@ a,button,.btn{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 @media (pointer:fine){html{overscroll-behavior:none}}
 .tbl td,.ev .d,.price .amt{font-variant-numeric:tabular-nums}
 .form select{background-color:var(--bg);color:var(--ink)}
-.pause{position:absolute;right:1.5rem;top:-.1rem;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:.35rem .8rem;font-size:.75rem;font-weight:700;cursor:pointer;min-height:2rem}
+.pause{position:absolute;right:1.5rem;top:-.1rem;z-index:2;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:.35rem .8rem;font-size:.75rem;font-weight:700;cursor:pointer;min-height:2rem}
 .band-head{position:relative}
 html.paused .track{animation-play-state:paused}
 .brand,.legal{translate:no}
@@ -287,3 +288,5 @@ footer{padding-bottom:calc(2rem + env(safe-area-inset-bottom,0px))}
 .mobile-menu{overflow-y:auto;overscroll-behavior:contain;padding-bottom:calc(1rem + env(safe-area-inset-bottom,0px))}
 .skip{top:calc(-3rem - env(safe-area-inset-top,0px))}
 .form input,.form select,.form textarea{font-size:max(1rem,16px)}
+
+@media (max-width:960px){.band-head{justify-content:space-between}.band-head:before,.band-head:after{display:none}.pause{position:static;flex:none}.hero{padding-top:1.5rem}.hero .stage3d{height:17rem}}
