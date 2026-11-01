@@ -199,8 +199,11 @@ export function createScene(container, opts = {}) {
     world.position.y = Math.sin(t * .6) * .22;
     if (!dragging) { dragYaw += vel * dt; vel *= Math.exp(-dt * 2.5); dragYaw *= Math.exp(-dt * .35); }
     yaw += (baseYaw + Math.sin(t * .2) * .08 + dragYaw - yaw) * (1 - Math.exp(-dt * 10));
-    const S = SPORT[sport]; const fw = S.L + 2 * S.margin + 4, tanH = Math.tan(camera.fov * Math.PI / 360); const R = Math.max(fw * (camera.aspect < 1.5 ? .5 : .54) / (tanH * camera.aspect), 30);
-    const narrow = camera.aspect < 1.5; camera.position.set(Math.sin(yaw) * Math.cos(pitch) * R, Math.sin(pitch) * R, Math.cos(yaw) * Math.cos(pitch) * R); camera.lookAt(0, narrow ? -3.2 : .6, 0);
+    const S = SPORT[sport]; // camera-afstand uit de omschreven cirkel van het terrein, zodat het bij elke draaihoek volledig in beeld blijft
+    const fw = S.L + 2 * S.margin, fd = S.W + 2 * S.margin, rad = Math.hypot(fw, fd) / 2 + 1.5, tanH = Math.tan(camera.fov * Math.PI / 360);
+    const narrow = camera.aspect < 1.5; const lookY = narrow ? -2.4 : .6;
+    const R = Math.max(rad * 1.04 / (tanH * camera.aspect), (rad * Math.sin(pitch) + 4.5) * (narrow ? 1.25 : 1.1) / tanH, 30);
+    camera.position.set(Math.sin(yaw) * Math.cos(pitch) * R, Math.sin(pitch) * R + lookY, Math.cos(yaw) * Math.cos(pitch) * R); camera.lookAt(0, lookY, 0);
     // bal heen en weer
     const ph = (t % (period * 2)) / period; const dir = ph < 1 ? 1 : -1; const u = ph < 1 ? ph : ph - 1; const e = easeInOut(u);
     const ax = kidA.position.x + 1.2, bx = kidB.position.x - 1.2; const from = dir > 0 ? ax : bx, to = dir > 0 ? bx : ax;
