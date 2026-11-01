@@ -303,3 +303,14 @@ footer{padding-bottom:calc(2rem + env(safe-area-inset-bottom,0px))}
   .card p[style*="flex-wrap"]{display:grid!important;grid-template-columns:1fr;gap:.5rem!important}.card p[style*="flex-wrap"] .btn{width:100%;white-space:normal;text-align:center}
   .sec-head{margin-bottom:1rem}
 }
+
+/* mobiel: tarieventabel als kaarten, pagina nooit breder dan het scherm */
+html{overflow-x:clip}
+@media (max-width:960px){
+  .tbl thead{display:none}.tbl,.tbl tbody,.tbl tr,.tbl td{display:block}
+  .tbl tr{padding:.9rem 1.1rem;border-bottom:1px solid var(--line)}.tbl tr:last-child{border:0}
+  .tbl td{padding:.15rem 0;border:0;display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+  .tbl td:first-child{display:block;font-family:Fredoka,sans-serif;font-weight:600;font-size:1.1rem;margin-bottom:.35rem}
+  .tbl td[data-label]:before{content:attr(data-label);color:var(--muted);font-weight:700;font-size:.9rem}
+  .page-hero .lead{font-size:1.05rem}
+}
