@@ -6,7 +6,7 @@
 <meta name="color-scheme" content="light dark">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css"></head><body>
+<link rel="stylesheet" href="css/site.css?v=mvy411ih"></head><body>
 <a class="skip" href="#inhoud">Naar de inhoud</a>
 <header class="site-header"><div class="wrap"><nav class="nav" aria-label="Hoofdnavigatie">
   <a class="brand" translate="no" href="index.html" aria-label="TRGB home"><img src="assets/logo-trgb@3x.png" alt="TRGB.be" width="222" height="168" decoding="async"></a>
@@ -118,10 +118,10 @@
   </div>
   <div class="legal"><span>© 2026 TRGB vzw · BE 0424.514.362 · Lid van <a href="https://www.tennisenpadelvlaanderen.be/">Tennis en Padel Vlaanderen</a> (clubnr. 7002)</span><span><a href="privacy.html">Privacyverklaring</a></span></div>
 </div></footer>
-<script src="js/site.js"></script>
-<script src="js/vendor/gsap.min.js" defer></script><script src="js/vendor/ScrollTrigger.min.js" defer></script><script src="js/motion.js" defer></script>
+<script src="js/site.js?v=mvy411ih"></script>
+<script src="js/vendor/gsap.min.js?v=mvy411ih" defer></script><script src="js/vendor/ScrollTrigger.min.js?v=mvy411ih" defer></script><script src="js/motion.js?v=mvy411ih" defer></script>
 <script type="module">
-import { createScene } from './js/scene3d.js';
+import { createScene } from './js/scene3d.js?v=mvy411ih';
 const poster = () => { document.getElementById('hero3d').outerHTML = document.querySelector('noscript').textContent; };
 if (matchMedia('(prefers-reduced-motion: reduce)').matches) poster();
 else { try { window.hero3d = createScene(document.getElementById('hero3d'), { sport: 'tennis', onSport: s => window.setHeroSport && window.setHeroSport(s, true) }); } catch (e) { poster(); } }

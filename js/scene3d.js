@@ -1,5 +1,5 @@
 // TRGB 3D-scène: zwevend tennis-/padelterrein met spelende figuren (Three.js)
-import * as THREE from './vendor/three.module.js';
+import * as THREE from './vendor/three.module.js?v=160';
 
 const COL = { clay: 0xC45A36, claySide: 0x8E3A1E, turf: 0x2F8F6E, turfSide: 0x1C5E47, lime: 0xC9D42B, red: 0xC8281F, ink: 0x1C2A24, white: 0xffffff, glass: 0xBFE0F5, blue: 0x2D5BFF, skinA: 0xF2C3A0, skinB: 0x8A5436, hair: 0x1E1A1A, shoe: 0xffffff };
 const SPORT = {
